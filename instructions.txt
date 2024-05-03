@@ -1,0 +1,13 @@
+Code to manually Add data in the Database:
+run python in the terminal first, then
+
+>>from shop import app,db
+>>app.app_context().push()
+>>db.create_all()
+
+
+>>> from shop.models import Item
+>>> item1 = Item(name="Iphone 15",price=135000,barcode='9654123578',description='Imaginative Phone')
+
+>>> db.session.add(item1)
+>>> db.session.commit()
