@@ -1,7 +1,7 @@
 from shop import app
 from shop.models import Item,User
 from flask import render_template, redirect, url_for, flash
-from shop.forms import RegisterForm
+from shop.forms import RegisterForm, LoginForm
 from shop import db
 
 @app.route('/')
@@ -19,7 +19,7 @@ def register_page():
     form = RegisterForm()
     if form.validate_on_submit():
         user_to_create = User(username=form.username.data,
-                            email_address=form.email_address.data,password_hash=form.password1.data)
+                            email_address=form.email_address.data,password=form.password1.data)
 
         db.session.add(user_to_create)
         db.session.commit()
@@ -28,6 +28,12 @@ def register_page():
         for err_msg in form.errors.values():
             flash(f'Error while Creating User :{err_msg} ',category='danger')
     return render_template('register.html',form=form)
+
+
+@app.route('/login',methods=['GET','POST'])
+def login_page():
+    form = LoginForm()
+    return render_template('login.html',form=form)
 
 if __name__=='__main__':
     app.run()

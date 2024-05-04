@@ -1,10 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 app = Flask(__name__)
 
 # Setting the Flask Database Configuration 
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///shopswap.db'
 db = SQLAlchemy(app)
+
+# Initialising Bcrypt 
+bcrypt=Bcrypt(app)
 
 # Setting DEBUG MODE 
 app.config['DEBUG']=True

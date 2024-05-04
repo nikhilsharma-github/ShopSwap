@@ -1,6 +1,6 @@
 # Database Model 
 from shop import db
-
+from shop import bcrypt
 # User Object 
 class User(db.Model):
     id = db.Column(db.Integer(),primary_key=True)
@@ -10,6 +10,13 @@ class User(db.Model):
     budget = db.Column(db.Integer(),nullable=False,default=1000)
     items = db.relationship('Item',backref='owned_user',lazy=True)
 
+    @property 
+    def password(self):
+        return self.password
+    
+    @password.setter
+    def password(self,plain_text_password):
+        self.password_hash=bcrypt.generate_password_hash(plain_text_password).decode('utf-8')
 
 # Items Object 
 class Item(db.Model):
