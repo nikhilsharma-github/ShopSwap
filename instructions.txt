@@ -17,8 +17,9 @@ run python in the terminal first, then
 
 
 //Querying Objects
-Items.query.all()
-Users.query.all()
+>>from shop.models import User,Item 
+>>Items.query.all()
+>>Users.query.all()
 
 //Rollbacking 
 db.session.rollback()

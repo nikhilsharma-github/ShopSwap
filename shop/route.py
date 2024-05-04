@@ -1,6 +1,6 @@
 from shop import app
 from shop.models import Item,User
-from flask import render_template,redirect,url_for
+from flask import render_template, redirect, url_for, flash
 from shop.forms import RegisterForm
 from shop import db
 
@@ -26,7 +26,7 @@ def register_page():
         return redirect(url_for('market_page'))
     if form.errors!={}:
         for err_msg in form.errors.values():
-            print(f'Error while Creating User :{err_msg} ')
+            flash(f'Error while Creating User :{err_msg} ',category='danger')
     return render_template('register.html',form=form)
 
 if __name__=='__main__':
