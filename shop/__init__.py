@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
 app = Flask(__name__)
 
 # Setting the Flask Database Configuration 
@@ -9,6 +10,9 @@ db = SQLAlchemy(app)
 
 # Initialising Bcrypt 
 bcrypt=Bcrypt(app)
+
+# Initializing login manager for Login page 
+login_manager=LoginManager(app)
 
 # Setting DEBUG MODE 
 app.config['DEBUG']=True
