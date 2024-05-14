@@ -1,31 +1,42 @@
 Code to manually Add data in the Database:
 run python in the terminal first, then
 
->>from shop import app,db
->>app.app_context().push()
-//>>db.drop_all()
->>db.create_all()
+
+//Importing db and app, Restarting and creating new db
+from shop import app,db
+app.app_context().push()
+//db.drop_all()
+db.create_all()
 
 
->>> from shop.models import Item
->>> item1 = Item(name="Iphone 15",price=135000,barcode='9654123578',description='Imaginative Phone')
->>> item2 = Item(name="Motorola Edge 40 Neo",price=35000,barcode='4389132409',description='Majestic Moto')
->>> item1 = Item(name="Samsung Fold Z",price=175000,barcode='1568234560',description='Folding Future')
+//Adding Items in DB 
+from shop.models import Item
+item1 = Item(name="Iphone 15",price=135000,barcode='9654123578',description='Imaginative Phone')
+db.session.add(item1)
+db.session.commit()
 
->>> db.session.add(item1)
->>> db.session.commit()
+item2 = Item(name="Motorola Edge 40 Neo",price=35000,barcode='4389132409',description='Majestic Moto')
+db.session.add(item2)
+db.session.commit()
+
+item3 = Item(name="Samsung Fold Z",price=175000,barcode='1568234560',description='Folding Future')
+db.session.add(item3)
+db.session.commit()
+
 
 
 //Querying Objects
->>from shop.models import User,Item 
->>Items.query.all()
->>Users.query.all()
+from shop.models import User,Item 
+Item.query.all()
+User.query.all()
 
 //Rollbacking 
 db.session.rollback()
 
->>from shop.models import User,Item
->> user1 = User(username="Nick",email_address="nick@gmail.com",password_hash="123456")
->>user2 = User(username="Jack",email_address="jack@gmail.com",password_hash="123456")
->>user3 = User(username="Alice",email_address="alice@gmail.com",password_hash="123456")
+
+//Adding Users in DB 
+from shop.models import User,Item
+user1 = User(username="Nick",email_address="nick@gmail.com",password_hash="123456")
+user2 = User(username="Jack",email_address="jack@gmail.com",password_hash="123456")
+user3 = User(username="Alice",email_address="alice@gmail.com",password_hash="123456")
 
