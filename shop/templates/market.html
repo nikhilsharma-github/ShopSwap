@@ -5,11 +5,11 @@ Market - ShopSwap
 
 {% block content %}
 
-<div class="row mt-3 ms-3">
-    <div class="col-8">
+<div class="row m-3">
+    <div class="col-lg-8 buy-section">
         <h2>Available Items on the Market</h2>
         <p>Click on one of the items to start buying</p>
-        <table class="table table-hover table-dark">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <!-- Your Columns HERE -->
@@ -44,7 +44,7 @@ Market - ShopSwap
 
     </div>
 
-    <div class="col-4">
+    <div class="col-lg-4 sell-section">
         <h2>Owned Items</h2>
         <p>Click on sell Item to place it back in the Market</p>
         <br>
@@ -52,7 +52,7 @@ Market - ShopSwap
             {% for owned_item in owned_items %}
             {% include 'includes/owned_items_modal.html'%}
             <div class="col-md-6">
-                <div style="margin-bottom: 5px" class="card text-center bg-dark">
+                <div style="margin-bottom: 5px" class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title">{{ owned_item.name }}</h5>
                         <button type="button" class="btn btn-outline-danger" style="margin-bottom: 5px"
@@ -60,7 +60,7 @@ Market - ShopSwap
                             Sell this Item
                         </button>
                         <p class="card-text"><strong>
-                                This item costs {{ owned_item.price }}$
+                                This item costs ₹{{ owned_item.price }}
                             </strong></p>
                     </div>
                 </div>
