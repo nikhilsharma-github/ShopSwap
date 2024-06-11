@@ -32,10 +32,10 @@ Market - ShopSwap
                     <td>{{item.barcode}}</td>
                     <td>{{item.price}}</td>
                     <td>
-                        <button class="btn btn-outline-info" data-toggle="modal"
-                            data-target="#Modal-MoreInfo-{{item.id}}">Info</button>
-                        <button class="btn btn-outline-success" data-toggle="modal"
-                            data-target="#Modal-PurchaseConfirm-{{item.id}}">Purchase</button>
+                        <button class="button-70" data-toggle="modal"
+                            data-target="#Modal-MoreInfo-{{item.id}}"><span>Info</span></button>
+                        <button class="button-70" data-toggle="modal"
+                            data-target="#Modal-PurchaseConfirm-{{item.id}}"><span>Purchase</span></button>
                     </td>
                 </tr>
                 {% endfor %}
@@ -51,18 +51,16 @@ Market - ShopSwap
         <div class="row">
             {% for owned_item in owned_items %}
             {% include 'includes/owned_items_modal.html'%}
-            <div class="col-md-6">
-                <div style="margin-bottom: 5px" class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ owned_item.name }}</h5>
-                        <button type="button" class="btn btn-outline-danger" style="margin-bottom: 5px"
-                            data-toggle="modal" data-target="#Modal-SellingConfirm-{{ owned_item.id }}">
-                            Sell this Item
-                        </button>
-                        <p class="card-text"><strong>
-                                This item costs ₹{{ owned_item.price }}
-                            </strong></p>
-                    </div>
+            <div class="col-xl-6 d-flex">
+                <div class="card card-body align-self-stretch align-items-stretch mb-2">
+                    <h5 class="card-title">{{ owned_item.name }}</h5>
+                    <p class="card-text"><strong>
+                            This item costs ₹{{ owned_item.price }}
+                        </strong></p>
+                    <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+                        data-target="#Modal-SellingConfirm-{{ owned_item.id }}">
+                        Sell this Item
+                    </button>
                 </div>
             </div>
             {% endfor %}

@@ -17,7 +17,7 @@
                     {{selling_form.hidden_tag()}}
 
                     <h4 class="text-center">
-                        Are you sure you want to Sell {{ owned_item.name }} for {{ owned_item.price }} ?
+                        Are you sure you want to Sell {{ owned_item.name }} for ₹{{ owned_item.price }} ?
                     </h4>
                     <br>
                     <h6 class="text-center">By Clicking Sell, you will put this item back to Market</h6>
@@ -25,10 +25,6 @@
                     <input id="sold_item" name="sold_item" type="hidden" value="{{owned_item.name}}">
                     {{selling_form.submit(class="btn btn-outline-danger btn-block")}}
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                </button>
             </div>
         </div>
     </div>

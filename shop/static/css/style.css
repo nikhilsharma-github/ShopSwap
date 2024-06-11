@@ -41,61 +41,122 @@ body {
   font-weight: 700;
 }
 
+#ModalLabel {
+  font-size: 2rem;
+  font-family: "Rajdhani", sans-serif;
+}
+.modal-dialog {
+  font-family: "Quicksand", sans-serif;
+}
+
 .button-89 {
   --b: 3px; /* border thickness */
   --s: 0.45em; /* size of the corner */
-    --color: #373b44;
+  --color: #373b44;
 
-    padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
-    color: var(--color);
-    --_p: var(--s);
-    background: conic-gradient(
-    from 90deg at var(--b) var(--b),
-    #0000 90deg,
-    var(--color) 0
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
     )
     var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
     calc(100% - var(--b) - 2 * var(--_p));
-    transition: 0.3s linear, color 0s, background-color 0s;
-    outline: var(--b) solid #0000;
-    outline-offset: 0.6em;
-    font-size: 16px;
-    border: 0;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 16px;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .button-89:hover,
 .button-89:focus-visible {
-    --_p: 0px;
-    outline-color: var(--color);
-    outline-offset: 0.05em;
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: 0.05em;
 }
 
 .button-89:active {
-    background: var(--color);
-    color: #fff;
-}
-.register-form-container, .login-form-container{
-    margin:2rem;
-    font-family: "Quicksand", sans-serif;
-    margin: 0 auto;
-    width:40%;
-}
-.register-form-container h1, .login-form-container h1 {
-    font-family: "Rajdhani", sans-serif;
-}
-.form-register, .form-signin{
-    margin:2rem 0;
+  background: var(--color);
+  color: #fff;
 }
 
-.buy-section h2, .sell-section h2{
-    font-family: "Rajdhani", sans-serif;
+.button-70 {
+  background: #fff;
+  border: none;
+  padding: 0.2rem 0.2rem;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  width: 100px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: skew(-21deg);
+  margin-left: 0.1rem;
+}
+
+span {
+  display: inline-block;
+  transform: skew(21deg);
+}
+
+.button-70::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: rgb(20, 20, 20);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.button-70:hover {
+  color: #fff;
+}
+
+.button-70:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.register-form-container,
+.login-form-container {
+  margin: 2rem;
+  font-family: "Quicksand", sans-serif;
+  margin: 0 auto;
+  width: 40%;
+}
+.register-form-container h1,
+.login-form-container h1 {
+  font-family: "Rajdhani", sans-serif;
+}
+.form-register,
+.form-signin {
+  margin: 2rem 0;
+}
+
+.buy-section h2,
+.sell-section h2,
+.card-title {
+  font-family: "Rajdhani", sans-serif;
+}
+
+.card-text {
+  font-family: "Quicksand", sans-serif;
 }
 
 @media only screen and (max-width: 768px) {
-    .register-form-container, .login-form-container{
-        width:80%;
-    }
+  .register-form-container,
+  .login-form-container {
+    width: 80%;
+  }
 }

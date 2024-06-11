@@ -5,21 +5,21 @@ run python in the terminal first, then
 //Importing db and app, Restarting and creating new db
 from shop import app,db
 app.app_context().push()
-//db.drop_all()
 db.create_all()
+//db.drop_all()
 
 
 //Adding Items in DB 
 from shop.models import Item
-item1 = Item(name="Iphone 15",price=135000,barcode='9654123578',description='Imaginative Phone')
+item1 = Item(name="ASUS ROG Laptop",price=75000,barcode='9654123578',description='Fastest Laptop')
 db.session.add(item1)
 db.session.commit()
 
-item2 = Item(name="Motorola Edge 40 Neo",price=35000,barcode='4389132409',description='Majestic Moto')
+item2 = Item(name="Motorola Edge 40",price=25000,barcode='4389132409',description='Majestic Moto')
 db.session.add(item2)
 db.session.commit()
 
-item3 = Item(name="Samsung Fold Z",price=175000,barcode='1568234560',description='Folding Future')
+item3 = Item(name="Samsung Fold Z",price=95000,barcode='1568234560',description='Folding Future')
 db.session.add(item3)
 db.session.commit()
 
@@ -37,6 +37,12 @@ db.session.rollback()
 //Adding Users in DB 
 from shop.models import User,Item
 user1 = User(username="Nick",email_address="nick@gmail.com",password_hash="123456")
+db.session.add(user1)
+db.session.commit()
 user2 = User(username="Jack",email_address="jack@gmail.com",password_hash="123456")
+db.session.add(user2)
+db.session.commit()
 user3 = User(username="Alice",email_address="alice@gmail.com",password_hash="123456")
+db.session.add(user3)
+db.session.commit()
 
