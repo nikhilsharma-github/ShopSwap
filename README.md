@@ -1,6 +1,3 @@
-# BuddyBook
-ShopSwap - An Ecommerce Marketplace Web Application (A Project Created using Python Flask, Bootstrap, SQLite using SQLAlchemy, Flask WTF Forms, and hosted on PythonAnywhere web service)
-
 <h1 align="center" id="title">ShopSwap - An Ecommerce Marketplace Web Application</h1>
 
 
