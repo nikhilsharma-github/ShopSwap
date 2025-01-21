@@ -18,6 +18,11 @@ body {
   font-family: "Rajdhani", sans-serif;
   font-weight: 700;
 }
+.mainLogo:hover {
+  background-color: rgb(92, 92, 92);
+  border-radius: 0.8rem;
+  transition: 0.5s;
+}
 #navbarNav ul li {
   font-family: "Quicksand", sans-serif;
   padding: 0 0.6rem 0;

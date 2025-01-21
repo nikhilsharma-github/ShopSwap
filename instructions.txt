@@ -1,28 +1,38 @@
 Code to manually Add data in the Database:
+Delete the .db file or modify on the existing schema.
 run python in the terminal first, then
 
+###COMMANDS ###
 
 //Importing db and app, Restarting and creating new db
 from shop import app,db
 app.app_context().push()
 db.create_all()
-//db.drop_all()
 
+//Dropping the whole DB  
+//db.drop_all()
 
 //Adding Items in DB 
 from shop.models import Item
-item1 = Item(name="ASUS ROG Laptop",price=75000,barcode='9654123578',description='Fastest Laptop')
+item1 = Item(name=" Bamboo Toothbrush",price=150,barcode='1234567890123',description="A biodegradable toothbrush made from sustainable bamboo, featuring soft bristles for gentle cleaning.")
 db.session.add(item1)
 db.session.commit()
 
-item2 = Item(name="Motorola Edge 40",price=25000,barcode='4389132409',description='Majestic Moto')
+item2 = Item(name="Study Table",price=600,barcode='2345678901234',description='A Sturdy and sleeky Study table for Laptop Use with Cup Holder and tablet holder')
 db.session.add(item2)
 db.session.commit()
 
-item3 = Item(name="Samsung Fold Z",price=95000,barcode='1568234560',description='Folding Future')
+item3 = Item(name="Shopping Bag",price=200,barcode='947124093746',description='A durable and stylish cotton shopping bag, designed to reduce plastic waste and promote eco-friendliness.')
 db.session.add(item3)
 db.session.commit()
 
+item4 = Item(name="Face Mask",price=400,barcode='4567890123456',description='A nourishing face mask made from natural ingredients, suitable for all skin types, promoting a healthy glow.')
+db.session.add(item4)
+db.session.commit()
+
+item5 = Item(name="Bluetooth Earbuds",price=900,barcode='9012345678901',description='Compact and lightweight wireless earbuds with high-quality sound and a built-in microphone for hands-free calls.')
+db.session.add(item5)
+db.session.commit()
 
 
 //Querying Objects
@@ -34,15 +44,16 @@ User.query.all()
 db.session.rollback()
 
 
-//Adding Users in DB 
-from shop.models import User,Item
-user1 = User(username="Nick",email_address="nick@gmail.com",password_hash="123456")
-db.session.add(user1)
-db.session.commit()
-user2 = User(username="Jack",email_address="jack@gmail.com",password_hash="123456")
-db.session.add(user2)
-db.session.commit()
-user3 = User(username="Alice",email_address="alice@gmail.com",password_hash="123456")
-db.session.add(user3)
-db.session.commit()
+//Adding Users in DB
+//Try to add these users via Register Page Only  
+//from shop.models import User,Item
+
+//user1 = User(username="Admin",email_address="admin@shopswap.com",password_hash="admin@98765")
+//db.session.add(user1)
+//db.session.commit()
+
+//user2 = User(username="Nick",email_address="nick@gmail.com",password_hash="nick@12345")
+//db.session.add(user2)
+//db.session.commit()
+
 
