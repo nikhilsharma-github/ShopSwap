@@ -54,6 +54,10 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
+.secondary-heading{
+  font-family: "Quicksand", sans-serif;
+}
+
 .button-89 {
   --b: 3px; /* border thickness */
   --s: 0.45em; /* size of the corner */
